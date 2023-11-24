@@ -81,6 +81,8 @@ private:
 
 
 
+
+
 std::allocator<std::string> StringVector::alloc;
 inline void StringVector::chk_n_alloc()
 {

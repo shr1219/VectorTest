@@ -54,6 +54,9 @@
         "variant": "cpp",
         "algorithm": "cpp",
         "iterator": "cpp",
-        "memory_resource": "cpp"
+        "memory_resource": "cpp",
+        "future": "cpp",
+        "thread": "cpp",
+        "queue": "cpp"
     }
 }

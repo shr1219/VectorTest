@@ -1,31 +1,10 @@
 #include <iostream>
-#include <queue>
 #include <thread>
-#include <mutex>
-#include <condition_variable>
+#include "myqueue.h"
 using namespace std;
 
 
-template <typename T>
-class SafeQueue {
-public:
-    SafeQueue(){};
-    SafeQueue(const SafeQueue& rhs) = delete;
-    SafeQueue& operator= (const SafeQueue& rhs) = delete;
-    SafeQueue(SafeQueue&& rhs) = delete;
-    SafeQueue& operator= (SafeQueue&& rhs) = delete;
-    ~SafeQueue() = default;
-    size_t size() const;
-    bool empty() const;
-    void push(const T&);
-    void push(T&&);
-    shared_ptr<T> pop();
-    shared_ptr<T> try_pop();
-private:
-    queue<T> data;
-    mutex mtx;
-    condition_variable cv;
-};
+
 
 template <typename T>
 inline size_t SafeQueue<T>::size() const {
